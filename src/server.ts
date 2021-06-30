@@ -1,11 +1,13 @@
 import 'reflect-metadata'
 import express, { Request, Response, NextFunction } from 'express';
 import "express-async-errors"
+import cors from 'cors'
 import { router } from './routes'
 
 import "./database/index.ts"
 
 const app = express();
+app.use(cors()) // ADD ORIGIN DOMAIN NAME
 
 app.use(express.json())
 
